@@ -5,8 +5,11 @@ console.log('in the model/burger folder');
 const burger ={
 
     // this should get all the burgers
-    selectAll: function {
-
+    selectAll: function() {
+        
+    },
+    createOne:function(name, cb) {
+        orm.create("burgers",['burger_name', 'devoured'],[name, false], cb) 
     }
 }
 

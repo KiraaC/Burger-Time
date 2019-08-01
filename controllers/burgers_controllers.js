@@ -27,7 +27,7 @@ router.put('/api/devorIt/:id', function (req, res) {
     burger.updateOne(req.params.id, function (results) {
         if (results.changedRows == 0) {
             return res.status(404).end();
-        } elese {
+        } else {
             res.status(200).end();
         }
     });
