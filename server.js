@@ -1,7 +1,7 @@
 const express = require('express');
 const exphds = require('express-handlebars');
 
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 3000;
