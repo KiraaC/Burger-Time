@@ -8,14 +8,14 @@ console.log("launch controller");
 router.get('/', function (req, res) {
     console.log('')
     burger.selectAll(function (data) {
-         console.log('')
+        console.log('')
         res.render('index', { burgerObj: data });
     });
 });
 
 // insert
 router.post('/api/newBurger', function (req, res) {
-   console.log('req.body');
+    console.log('req.body');
     burger.insertOne(['burger_name'], [req.body.burger_name], function (result) {
         res.json({ id: result.insertId });
     });
