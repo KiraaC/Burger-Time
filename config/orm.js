@@ -4,11 +4,11 @@ let orm = {
   selectAll: function (tableInput, cb) {
     let queryString = "SELECT * FROM " + tableInput + ";";
 
-    connection.query(queryString, function (err, result) {
+    connection.query(queryString, function (err, res) {
       if (err) {
         throw err;
       }
-      return result;
+      cb (res);
     });
   },
 
@@ -26,9 +26,9 @@ let orm = {
       cb(res)
     });
   },
-  update: function (table, objectColVals, condition, cb) {
+  update: function (table, objColVals, condition, cb) {
     let queryString = "UPDATE " + table;
-    queryString = " SET " + objectToSql(objectColVals) + " WHERE " + condition;
+    queryString = " SET " + objToSql(objColVals) + " WHERE " + condition;
 
     console.log(queryString);
     connection.query(queryString, function (err, res) {
@@ -47,7 +47,7 @@ printQuestionMarks = function (num) {
   return array.toString()
 }
 
-function objectToSql(ob) {
+function objToSql(ob) {
   var arr = [];
   for (var key in ob) {
     arr.push(key + "=" + ob[key]);
