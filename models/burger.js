@@ -14,9 +14,6 @@ let burger = {
         orm.create('burgers', ['burger_name', 'devoured'], [name, false], cb);
     },
 
-    // insert the burger
-
-
     // update the burger
     update: function (id, cb) {
         let condition = "id=" + id;

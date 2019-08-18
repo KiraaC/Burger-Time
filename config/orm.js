@@ -10,7 +10,6 @@ let orm = {
     });
   },
 
-  // adding a create function
   create: function (table, cols, vals, cb) {
     queryString = "INSERT INTO " + table + "(" + cols + ")" + "VALUES (" + printQuestionMarks(vals.length) + ")"
     console.log('queryString');
@@ -25,7 +24,7 @@ let orm = {
 printQuestionMarks = function (num) {
   let array = []
 
-  for (var i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     array.push("?")
   }
   return array.toString()
